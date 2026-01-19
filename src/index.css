@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+}
+
+/* header box shadow */
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+/* height: 80px; */
+}
+header img{
+  height: 100px
+}
+
+header h1{
+  font-weight: 500;
+  /* margin: 0; */
+}
+
+main{
+  padding: 30px 30px 10px;
+
+}
+
+main>p{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ingredients-form{
+  /* margin-top: 30px; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 12px;
+  /* height: 50px; */
+
+ 
+}
+.ingredients-form > input{
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  padding: 9px 15px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);;
+  flex-grow: 1;
+  min-width: 150px;
+  max-width: 500PX ;
+}
+
+.ingredients-form > button{
+  font-family: Inter, sans-serif;
+  border: none ;
+  border-radius: 6px;
+  background-color: hsl(60, 3%, 8%);
+  color: #FAFAF8;
+  font-size: 0.9rem;
+  width: 150px;
+
+
+
+}
+
+.ingredients-form> button::before{
+  content:"+";
+  margin-right: 5px;
+
+}
+
+ul.ingredients-list {
+    margin-bottom: 48px;
+}
+
+ul.ingredients-list > li {
+    color: #475467;
+    line-height: 28px;
+}
+
+.get-recipe-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    background: #F0EFEB;
+    padding: 10px 28px;
+}
+
+.get-recipe-container h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.get-recipe-container p {
+    color: #6B7280;
+    font-size: 0.875rem;
+    line-height: 20px;
+}
+
+.get-recipe-container button {
+    border: none;
+    border-radius: 6px;
+    background: #D17557;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    color: #FAFAF8;
+    padding: 9px 17px;
+    font-family: Inter, sans-serif;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+/* ---------------------------STAR CARD------------------------------------- */
+
+.card {
+    background-color: white;
+    width: 200px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    height: 350px;
+}
+
+.card .avatar {
+    width: 100%;
+    padding: 10%;
+    padding-bottom: 0;
+}
+.card .name {
+    margin-block: 13px;
+    color: #333333;
+}
+
+.card .info {
+    padding: 10px;
+}
+
+.card .favorite {
+    width: 25px;
+    cursor: pointer;
+}
+
+.card .contact {
+    font-size: 0.75rem;
+    color: gray;
+    margin-block: 7px;
+}
+
+.card .favorite-button {
+    border: none;
+    background: transparent;
+}
+
+.card .favorite-button:active {
+    transform: none;
+    box-shadow: none;
+}
+/* -------------------------------------------------------------------------------------------------- */
