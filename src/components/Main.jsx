@@ -15,7 +15,7 @@ export default function Main(){
     <li key={i}>{i}</li>
     ))
 
-    ///OLD way to handle form submit on client side
+ ///OLD way <form onsubmit={handleSubmit} on client side
 //     function handleSubmit(e){
 //         e.preventDefault()
 //         const formEl= e.currentTarget
@@ -25,10 +25,9 @@ export default function Main(){
 //         formEl.reset()
 //   }
 
-//<form onSubmit={handleSubmit} 
 
-
-  //NEW way to handle form submit on clinet side
+  //NEW way(React 19) to handle form submit on clinet side using action={handle.....}
+  //Adv: Getting formData & automatically as input, and form reset done for you
     function addItems(formData){
         const newItem = formData.get("ingredient")
         setIngredients(prev => [...prev,newItem])
