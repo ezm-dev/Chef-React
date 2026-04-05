@@ -22,9 +22,8 @@ export default function Main(){
 
  ///OLD way <form onsubmit={handleSubmit} on client side
 //     function handleSubmit(e){
-//         e.preventDefault()
-//         const formEl= e.currentTarget
-//         const formData= new FormData(formEl)
+//         e.preventDefault()*
+//         const formData= new FormData(e.currentTarget)*
 //         const newItem= formData.get("ingredient")
 //         setIngredients(prev=> [...prev,newItem])
 //         formEl.reset()
@@ -35,6 +34,14 @@ export default function Main(){
   //Adv: Getting formData & automatically as input, and form reset done for you
     function addItems(formData){
         const newItem = formData.get("ingredient")
+        if(!newItem){
+            alert("Please enter an ingredient")
+            return
+        }
+        if(ingredients.includes(newItem)){
+            alert("You have already added this ingredient")
+            return
+        }   
         setIngredients(prev => [...prev,newItem])
 
     }
@@ -51,7 +58,10 @@ return(
             name="ingredient"
             placeholder="e.g. Oregano"
             aria-label="Enter ingredients"
-            defaultValue="Pasta" />
+            // defaultValue="Salt"
+            pattern="[a-zA-Z\s]{2,}" // Only letters and spaces, at least 2 characters
+            title="Please enter a valid ingredient name"
+             />
             <button>Add ingredients</button>
         </form>
            {ingredients.length >0 && <IngredientsList ingredients={ingredients} toggleRecipeShown={toggleRecipeShown} ref={recipeSection}/> }
