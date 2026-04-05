@@ -20,19 +20,21 @@ export default function Main(){
     }
 
 
- ///OLD way <form onsubmit={handleSubmit} on client side
+ ///2-Before (React 19)    <form onSubmit={handleSubmit} method="post"> on client side
 //     function handleSubmit(e){
-//         e.preventDefault()*
-//         const formData= new FormData(e.currentTarget)*
+//         e.preventDefault() // prevent page reload on form submit
+//         const formData= new FormData(e.currentTarget)
 //         const newItem= formData.get("ingredient")
 //         setIngredients(prev=> [...prev,newItem])
 //         formEl.reset()
 //   }
 
-// Not using controlling components
-  //NEW way(React 19) to handle form submit on clinet side using action={handle.....}
-  //Adv: Getting formData & automatically as input, and form reset done for you
-    function addItems(formData){
+// 1-Oldway using controlling components (state for each input--onchanege={e=>setIngredient(e.target.value)} value={ingredient}
+  //3- NEW way(React 19) to handle form submit on clinet side using action={handle.....}
+  //Adv: Getting formData automatically as input, and form reset done for you
+    
+//  <form action={addItems}>   
+  function addItems(formData){
         const newItem = formData.get("ingredient")
         if(!newItem){
             alert("Please enter an ingredient")
@@ -45,7 +47,7 @@ export default function Main(){
         setIngredients(prev => [...prev,newItem])
 
     }
-    //  <form action={addItems}
+ 
 
     
 return(
@@ -60,7 +62,7 @@ return(
             aria-label="Enter ingredients"
             // defaultValue="Salt"
             pattern="[a-zA-Z\s]{2,}" // Only letters and spaces, at least 2 characters
-            title="Please enter a valid ingredient name"
+            title="Please enter a valid ingredient name (only letters and spaces, at least 2 characters)"
              />
             <button>Add ingredients</button>
         </form>
