@@ -5,7 +5,8 @@ import IngredientsList from "./IngredientsList"
 export default function Main(){
 
 
-    const [ingredients,setIngredients] = useState(["all the main spices", "pasta", "ground beef", "tomato paste"])
+    const [ingredients,setIngredients] = useState([])
+        //"all the main spices", "pasta", "ground beef", "tomato paste"])
     const [recipeShown, setRecipeShown] = useState(false)
     const recipeSection = useRef(null)
 
@@ -66,7 +67,7 @@ return(
              />
             <button>Add ingredients</button>
         </form>
-           {ingredients.length >0 && <IngredientsList ingredients={ingredients} toggleRecipeShown={toggleRecipeShown} ref={recipeSection}/> }
+           {ingredients.length>0 && <IngredientsList ingredients={ingredients} toggleRecipeShown={toggleRecipeShown} ref={recipeSection}/> }
             {recipeShown && <ClaudeRecipe /> }
     </main>
 )
