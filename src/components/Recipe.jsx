@@ -1,8 +1,13 @@
+import ReactMarkdown from "react-markdown"
 export default function Recipe(props){
+
     return (
         <section>
-                <h2>Chef Recommends:</h2>
-                <article className="suggested-recipe-container" aria-live="polite">
+              <h2>Chef Recommends...</h2>
+                <article className="recipe-container" aria-live="polite">
+                      
+                    {props.recipe?props.recipe:
+                    <main>
                     <p>Based on the ingredients you have available, I would recommend making a simple a delicious <strong>Beef Bolognese Pasta</strong>. Here is the recipe:</p>
                     <h3>Beef Bolognese Pasta</h3>
                     <strong>Ingredients:</strong>
@@ -30,7 +35,12 @@ export default function Recipe(props){
                         <li>Add the Bolognese sauce to the cooked pasta and toss to combine.</li>
                         <li>Serve hot, garnished with additional fresh basil or grated Parmesan cheese if desired.</li>
                     </ol>
+                     </main>
+}
                 </article>
+               
+
             </section>
+        
     )
 }

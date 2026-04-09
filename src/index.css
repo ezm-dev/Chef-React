@@ -159,3 +159,20 @@ ul.ingredients-list > li {
     box-shadow: none;
 }
 /* -------------------------------------------------------------------------------------------------- */
+.recipe-container {
+    color: #475467;
+    line-height: 28px;
+    font-size: 1.125rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px ;
+    max-width:800px;
+    margin: 0 auto;
+    flex-wrap: wraps;
+}
+
+.recipe-container ul li, .recipe-container ol li {
+    margin-bottom: 8px;
+}
