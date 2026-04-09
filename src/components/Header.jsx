@@ -4,7 +4,7 @@ export default function Header(){
     return(
         <header>
             <img src={logoImage} alt="header-image" />
-            <h1> Chef AI</h1>
+            <h1> Chef React</h1>
         </header>
     )
 }

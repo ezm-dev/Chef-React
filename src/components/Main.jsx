@@ -1,5 +1,5 @@
 import {useRef, useState,useEffect} from "react"
-import ClaudeRecipe from "./ClaudeRecipe"
+import Recipe from "./Recipe"
 import IngredientsList from "./IngredientsList"
 
 export default function Main(){
@@ -68,7 +68,7 @@ return(
             <button>Add ingredients</button>
         </form>
            {ingredients.length>0 && <IngredientsList ingredients={ingredients} toggleRecipeShown={toggleRecipeShown} ref={recipeSection}/> }
-            {recipeShown && <ClaudeRecipe /> }
+            {recipeShown && <Recipe /> }
     </main>
 )
 }

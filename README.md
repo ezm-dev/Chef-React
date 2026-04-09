@@ -1,2 +1,2 @@
-# 2-Chef-AI
-Give ingredients and generate recipes
+# 2-Chef-React
+Give ingredients and generate a recipe using React.
